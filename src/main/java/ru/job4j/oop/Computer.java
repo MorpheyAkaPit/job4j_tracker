@@ -10,6 +10,16 @@ public class Computer {
         System.out.println("Много мониторов: " + multiMonitor);
         System.out.println("SSD: "+ ssd + " Gb");
         System.out.println("Модель CPU: " + cpu);
+        System.out.println();
+    }
+
+    public  Computer() {
+
+    }
+
+    public Computer(int ssd, String cpu) {
+            this.ssd = ssd;
+            this.cpu = cpu;
     }
     public Computer(boolean multiMonitor, int ssd, String cpu) {
         this.multiMonitor = multiMonitor;
@@ -17,10 +27,21 @@ public class Computer {
         this.cpu = cpu;
     }
 
+    public Computer(boolean multiMonitor, double ssd, String cpu) {
+            this.multiMonitor = multiMonitor;
+            this.ssd = (int) ssd;
+            this.cpu = cpu;
+    }
+
     public static void main(String[] args) {
-        Computer computer = new Computer(true, 500, "Intel Core i7-10700K");
-        computer.printInfo();
-        Computer comp = new Computer(true, 256, "AMD Ryzen 5 3600");
-        comp.printInfo();
+        Computer first = new Computer();
+        first.printInfo();
+        Computer second = new Computer(true, 256, "AMD Ryzen 5 3600");
+        second.printInfo();
+        Computer third = new Computer(256, "AMD Ryzen 5 3600");
+        third.printInfo();
+        Computer forth = new Computer(true, 512.0, "AMD Ryzen 7 3700X");
+        forth.printInfo();
+
     }
 }
