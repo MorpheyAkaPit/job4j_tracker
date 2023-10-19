@@ -32,11 +32,13 @@ public class Item {
         this.id = id;
         this.name = name;
     }
+
     public void printInfo() {
         System.out.println(id);
         System.out.println(name);
         System.out.println();
     }
+
     public static void main(String[] args) {
         Item first = new Item();
         first.printInfo();
